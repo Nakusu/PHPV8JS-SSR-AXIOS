@@ -16,6 +16,7 @@
 </p>
 <h2>- Example PHP RENDERER</h2>
 <p>
+    {
     private function render($path)
     {
         // APIS CALL
@@ -45,6 +46,7 @@
         $v8->executeString($app_source);
 
         return ob_get_clean();
+    }
     }
 </p>
 
