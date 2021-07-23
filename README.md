@@ -5,10 +5,10 @@
 * For make that, you need to allow V8JS to make http requests with axios. The default axios adapter is XMLHttpRequest (for web browser), but you need to swith him to http adapter if you would like to allow your nodejs server to make http requests.
 
 ## Please visit this links for understood the situation :
-* :link: V8JS : https://github.com/phpv8/v8js
-* :link:AXIOS Adapter : https://github.com/axios/axios/issues/1180
-* :link:AXIOS XMLHttpRequest : https://github.com/i18next/i18next-xhr-backend/issues/281
-* :link: MODULE LOADER V8JS : https://github.com/phpv8/v8js/issues/447
+* V8JS : https://github.com/phpv8/v8js
+* AXIOS Adapter : https://github.com/axios/axios/issues/1180
+* AXIOS XMLHttpRequest : https://github.com/i18next/i18next-xhr-backend/issues/281
+* MODULE LOADER V8JS : https://github.com/phpv8/v8js/issues/447
 
 ## A "solution" of this problem ?
 In my case, i doesn't success to switch correctly the axios adapter because http adapter need http/https library of nodejs (https://nodejs.dev/learn/the-nodejs-http-module). In this case (PHP V8JS) and in my opinion/researchs about it, it's not possible to use http nodejs library... 
