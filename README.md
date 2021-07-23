@@ -1,22 +1,7 @@
-<h1>PHP V8JS VUE JS AXIOS SSR SOLUTION</h1>
-<ul>
-    <li>Your are using PHP V8JS for compile your javascript code in server side.</li>
-    <li>You make api calls with axios and you would like to make them in server side with PHP V8JS.</li>
-    <li>For make that, you need to allow V8JS to make http requests with axios. The default axios adapter is XMLHttpRequest (for web browser), but you need to swith him to http adapter if you would like to allow your nodejs server to make http requests.</li>
-    <li>Please visit this links for understood the situation :</li>
-    <li>V8JS : https://github.com/phpv8/v8js</li>
-    <li>AXIOS Adapter : https://github.com/axios/axios/issues/1180</li>
-    <li>AXIOS XMLHttpRequest : https://github.com/i18next/i18next-xhr-backend/issues/281</li>
-    <li>MODULE LOADER V8JS : https://github.com/phpv8/v8js/issues/447</li>
-</ul>
-<h2>- A "solution" of this problem ?</h2>
-<p>
-    In my case, i doesn't success to switch correctly the adapter of axios because http adapter need to have http/https library of nodejs (https://nodejs.dev/learn/the-nodejs-http-module). In this case (PHP V8JS), in my opinion and my researchs about, it's not possible...
-    For make my Apis call in server side, i inject the json results of them in the PHP javascript V8JS initialisation (it is not very explicit, I prefere to show code ^^).
-</p>
-<h2>- Example PHP RENDERER</h2>
-=======
-```php
+# PHP V8JS VUE JS AXIOS SSR SOLUTION
+
+## Example PHP RENDERER
+```
 <?php
 function render($path)
     {
@@ -48,9 +33,9 @@ function render($path)
 
         return ob_get_clean();
     }
-
-<h2>- Example ENTRY-SERVER</h2>
-<p>
+```
+## Example ENTRY-SERVER
+```
     import { createApp } from "./app";
 
     new Promise(async (resolve, reject) => {
@@ -77,10 +62,10 @@ function render($path)
     .catch((err) => {
         print(err);
     });
-</p>
+```
 
-<h2>- Example APP VUE JS</h2>
-<p>
+## Example APP VUE JS
+```
     // default testapi set for client createApp usage
     export async function createApp(testapi = null) {
         // init your vuex store
@@ -102,4 +87,4 @@ function render($path)
         return { app, router, store };
 
     }
-</p>
+```
