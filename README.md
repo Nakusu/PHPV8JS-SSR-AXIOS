@@ -11,8 +11,8 @@
 * MODULE LOADER V8JS : https://github.com/phpv8/v8js/issues/447
 
 ## A "solution" of this problem ?
-In my case, i doesn't success to switch correctly the axios adapter because http adapter need http/https library of nodejs (https://nodejs.dev/learn/the-nodejs-http-module). In this case (PHP V8JS) and in my opinion/researchs about it, it's not possible to use http nodejs library... 
-For make my Apis call in server side, i inject the json results of them in the PHP javascript V8JS initialisation (it is not very clear, I prefere to show code for show you ^^).
+In my case, I doesn't success to switch correctly the axios adapter because http adapter need http/https library of nodejs (https://nodejs.dev/learn/the-nodejs-http-module). In this case (PHP V8JS) and in my opinion/researchs about it, it's not possible to use http nodejs library... 
+For make my Apis call in server side, I inject the json results of them in the PHP javascript V8JS initialisation (it is not very clear, I prefere to show code for show you ^^).
 
 ## Example PHP RENDERER
 ```php
@@ -102,3 +102,5 @@ function render($path)
 
     }
 ```
+
+# If you have another solution, I am interested
