@@ -16,7 +16,6 @@
 </p>
 <h2>- Example PHP RENDERER</h2>
 =======
-<p>
     ```php
     <?php
         function render($path)
@@ -49,7 +48,6 @@
 
             return ob_get_clean();
         }
-</p>
 
 <h2>- Example ENTRY-SERVER</h2>
 <p>
