@@ -1,5 +1,18 @@
 # PHP V8JS VUE JS AXIOS SSR SOLUTION
 
+* Your are using PHP V8JS for compile your javascript code in server side.
+* You make api calls with axios and you would like to make them in server side with PHP V8JS.
+* For make that, you need to allow V8JS to make http requests with axios. The default axios adapter is XMLHttpRequest (for web browser), but you need to swith him to http adapter if you would like to allow your nodejs server to make http requests.
+
+## Please visit this links for understood the situation :
+* V8JS : https://github.com/phpv8/v8js
+* AXIOS Adapter : https://github.com/axios/axios/issues/1180
+* AXIOS XMLHttpRequest : https://github.com/i18next/i18next-xhr-backend/issues/281
+* MODULE LOADER V8JS : https://github.com/phpv8/v8js/issues/447
+
+## A "solution" of this problem ?
+In my case, i doesn't success to switch correctly the adapter of axios because http adapter need to have http/https library of nodejs (https://nodejs.dev/learn/the-nodejs-http-module). In this case (PHP V8JS), in my opinion and my researchs about, it's not possible... For make my Apis call in server side, i inject the json results of them in the PHP javascript V8JS initialisation (it is not very explicit, I prefere to show code ^^).
+
 ## Example PHP RENDERER
 ```
 <?php
