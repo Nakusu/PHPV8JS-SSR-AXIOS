@@ -16,38 +16,38 @@
 </p>
 <h2>- Example PHP RENDERER</h2>
 =======
-    ```php
-    <?php
-        function render($path)
-        {
-            // APIS CALL
-            $testApi = apicontroller::testApi();
+```php
+<?php
+function render($path)
+    {
+        // APIS CALL
+        $testApi = apicontroller::testApi();
 
-            $renderer_source = File::get(base_path('node_modules/vue-server-renderer/basic.js'));
-            $app_source = File::get(public_path('js/entry-server.js'));
+        $renderer_source = File::get(base_path('node_modules/vue-server-renderer/basic.js'));
+        $app_source = File::get(public_path('js/entry-server.js'));
 
-            $v8 = new \V8Js();
-            ob_start();
+        $v8 = new \V8Js();
+        ob_start();
 
-            $v8->setModuleLoader(function ($location) {
+        $v8->setModuleLoader(function ($location) {
             return file_get_contents($location);
-            });
+        });
 
-            $js =
-            <<<EOT
+        $js =
+        // EOT { } is for array with json_encode()
+        <<<EOT
             var process = { env: { VUE_ENV: "server", NODE_ENV: "production" } }; 
             this.global = { process: process }; 
             var url = "$path";
-            // { } is for array with json_encode()
             const testApi = {$testApi};
-            EOT;
+        EOT;
 
-            $v8->executeString($js);
-            $v8->executeString($renderer_source);
-            $v8->executeString($app_source);
+        $v8->executeString($js);
+        $v8->executeString($renderer_source);
+        $v8->executeString($app_source);
 
-            return ob_get_clean();
-        }
+        return ob_get_clean();
+    }
 
 <h2>- Example ENTRY-SERVER</h2>
 <p>
