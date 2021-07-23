@@ -2,7 +2,7 @@
 
 * Your are using PHP V8JS for compile your javascript code in server side.
 * You make api calls with axios and you would like to make them in server side with PHP V8JS.
-* For make that, you need to allow V8JS to make http requests with axios. The default axios adapter is XMLHttpRequest (for web browser), but you need to swith him to http adapter if you would like to allow your nodejs server to make http requests.
+* For make that, you need to allow V8JS to make http requests with axios. The default axios adapter is XMLHttpRequest (for web browser), but you need to swith it to http adapter if you would like to allow your nodejs server to use axios.
 
 ## Please visit this links for understood the situation :
 * V8JS : https://github.com/phpv8/v8js
