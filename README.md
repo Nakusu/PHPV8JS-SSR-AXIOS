@@ -2,7 +2,7 @@
 
 * Your are using PHP V8JS for compile your javascript code in server side.
 * You make api calls with axios and you would like to make them in server side with PHP V8JS.
-* For make that, you need to allow V8JS to make http requests with axios. The default axios adapter is XMLHttpRequest (for web browser), but you need to swith it to http adapter if you would like to allow your nodejs server to use axios.
+* To do that, you need to allow V8JS to use http requests with axios. The default axios adapter is XMLHttpRequest (for web browser), but you need to switch it to http adapter if you want to allow your nodejs server to use axios.
 
 ## Please visit these links to understand the situation :
 * V8JS : https://github.com/phpv8/v8js
@@ -10,9 +10,9 @@
 * AXIOS XMLHttpRequest : https://github.com/i18next/i18next-xhr-backend/issues/281
 * MODULE LOADER V8JS : https://github.com/phpv8/v8js/issues/447
 
-## A "solution" of this problem ?
-In my case, I doesn't success to switch correctly the axios adapter because http adapter need http/https library of nodejs (https://nodejs.dev/learn/the-nodejs-http-module). In this case (PHP V8JS) and in my opinion/researchs about it, it's not possible to use http nodejs library... 
-For make my Apis call in server side, I inject the json results of them in the PHP javascript V8JS initialisation (it is not very clear, I prefere to show code for show you ^^).
+## A "solution" to this problem ?
+In my configuration, it didn't success to switch correctly the axios adapter because http adapter needs http/https library of nodejs (https://nodejs.dev/learn/the-nodejs-http-module). Here (PHP V8JS) and in my opinion/researchs, it's not possible to use http nodejs library... 
+To do my Apis call in server side, I inject the json results in the PHP javascript V8JS initialisation (it is not very clear, so i prefere to show you my code to explain haha).
 
 ## Example PHP RENDERER
 ```php
