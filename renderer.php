@@ -23,8 +23,8 @@ class indexcontroller extends Controller
             return file_get_contents($location);
         });
 
-        $js =
         // EOT { } is for array with json_encode()
+        $js =
         <<<EOT
             var process = { env: { VUE_ENV: "server", NODE_ENV: "production" } }; 
             this.global = { process: process }; 
