@@ -14,7 +14,7 @@
 In my case, i doesn't success to switch correctly the adapter of axios because http adapter need to have http/https library of nodejs (https://nodejs.dev/learn/the-nodejs-http-module). In this case (PHP V8JS), in my opinion and my researchs about, it's not possible... For make my Apis call in server side, i inject the json results of them in the PHP javascript V8JS initialisation (it is not very explicit, I prefere to show code ^^).
 
 ## Example PHP RENDERER
-```
+```php
 <?php
 function render($path)
     {
@@ -48,7 +48,7 @@ function render($path)
     }
 ```
 ## Example ENTRY-SERVER
-```
+```javascript
     import { createApp } from "./app";
 
     new Promise(async (resolve, reject) => {
@@ -78,7 +78,7 @@ function render($path)
 ```
 
 ## Example APP VUE JS
-```
+```javascript
     // default testapi set for client createApp usage
     export async function createApp(testapi = null) {
         // init your vuex store
